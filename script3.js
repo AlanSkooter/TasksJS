@@ -8,8 +8,8 @@ for (let i = 0; i < 20; i++) {
         ChristmasTree += '*';
     } else {
         ChristmasTree += '_';
-      }       
-    }
+      }    
+  }
   console.log(ChristmasTree);
   ChristmasTree = '';
 }

@@ -8,5 +8,4 @@ for (let i = 0; i < arr.length; i++) {
     sumPositive += arr[i];
   }
 }
-
 console.log(sumPositive);
