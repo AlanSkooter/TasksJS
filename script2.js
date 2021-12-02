@@ -1,12 +1,17 @@
 'use strict';
 
-let age = Number(prompt('Введите Ваш возраст?'));
+const users =  [
+  {name: 'Ivan', age: 18},
+  {name: 'Petr', age: 12},
+  {name: 'Sidor', age: 25},
+  {name: 'Pavel', age: 16},
+  {name: 'Sasha', age: 29}];
 
-  if (isNaN(age) || age <= 0) {
-    console.log('Неверно указан возраст');
-  } else {
-    console.log(`Привет, мне ${age} лет`);
-  };
+let sumYoung = 0;
 
-  let result = isNaN(age) || age <= 0 ? 'Неверно указан возраст' : `Привет, мне ${age} лет`;
-  console.log(result);
+for (let i = 0; i < users.length; i++) {
+  if (users[i].age < 18) {
+    sumYoung += users[i].age;
+  }
+}
+console.log(sumYoung);

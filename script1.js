@@ -1,12 +1,12 @@
 'use strict';
 
-let a = Number(prompt('Введите число?'));
+const arr = [1, 2, -8, 4, 7, 10, 24, -5, 90, 80, 91];
+let sumPositive = 0;
 
-  if (a == 0) {
-    console.log('Неверно');
-  } else {
-    console.log('Верно');
-  };
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > 0 && arr[i] % 2 == 0) {
+    sumPositive += arr[i];
+  }
+}
 
-  let result = a == 0 ? 'Неверно' : 'Верно';
-  console.log(result);
+console.log(sumPositive);
