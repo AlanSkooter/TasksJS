@@ -1,17 +1,23 @@
 'use strict';
 
-let sumYoung = 0;
-
-const users =  [
-  {name: 'Ivan', age: 18},
-  {name: 'Petr', age: 12},
-  {name: 'Sidor', age: 25},
-  {name: 'Pavel', age: 16},
-  {name: 'Sasha', age: 29}];
-
-for (let i = 0; i < users.length; i++) {
-  if (users[i].age < 18) {
-    sumYoung += users[i].age;
+console.everyUser = function (users, prefix) {
+  for (let i = 0; i < users.length; i++) {
+    let userName = prefix + users[i].name;
+    console.log(userName);
   }
 }
-console.log(sumYoung);
+
+const userpetya = {
+    name: "petya",
+   transactions: [123, 123213213, -5, -8],
+    sum: 10
+}
+
+
+const uservasya = {
+    name: "vasya",
+    transactions: [10, 20, -5, -8],
+    sum: 10
+}
+
+console.everyUser([userpetya, uservasya], 'Имя пользователя: ');
