@@ -20,7 +20,7 @@ let avg2 = function() {
   }
   let average = sum/arguments.length;
   return average;
-}
+};
 
 let example2 = avg2(1, 2, 3, 4, 5);
 
@@ -33,7 +33,7 @@ let avg3 = (...args) => {
   }
   let average = sum/args.length;
   return average;
-}
+};
 
 let example3 = avg3(1, 2, 3, 4, 5);
 
