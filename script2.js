@@ -11,8 +11,10 @@ const secondHouse = new HouseBuilder(10, 8, 3);
 
 HouseBuilder.prototype.calcArea = function(){
     const {length, width, floors} = this;
-    console.log(`Площадь дома: ${length * width * floors}`);
+    this.totalArea = length * width * floors;
 }
 
-const firstTotalArea = firstHouse.calcArea();
-const secondTotalArea = secondHouse.calcArea();
+firstHouse.calcArea();
+secondHouse.calcArea();
+console.log(firstHouse.totalArea);
+console.log(secondHouse.totalArea);
