@@ -6,9 +6,14 @@ const users = [{name: 'Ivan', age: 18},
 {name: 'Pavel', age: 16},
 {name: 'Sasha', age: 29}];
 
+let userList = document.createElement('ul');
+document.body.prepend(userList);
+
 function addDiv(name, age) {
 let userDiv = document.createElement('div');
-document.body.prepend(userDiv);
+let userLi = document.createElement('li');
+userList.prepend(userLi);
+userLi.prepend(userDiv);
 userDiv.innerHTML = `<p> Имя пользователя: ${name}, возраст: ${age}. </p>`;
 }
 
