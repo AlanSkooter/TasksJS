@@ -23,28 +23,26 @@ users.forEach(function(user) {
     addDiv(name, age);
   });
 
-const button = document.getElementById('btn');
-const inputName = document.getElementById('inputName');
-const inputAge = document.getElementById('inputAge');
-
-  button.onclick = () => {
-    if (inputName.value == '' || inputAge.value == '') {
-      const warning = document.createElement('div');
-      userList.prepend(warning);
-      warning.innerHTML = `<p id = "warning" style="color: red"> Введите имя и возраст пользователя! </p>`; 
-    } else {
-      const name = inputName.value;
-      const age = +inputAge.value;
-      users.push({name: name, age: age});
-      const userDiv = document.createElement('div');
-      const userLi = document.createElement('li');
-      userList.prepend(userLi);
-      userLi.prepend(userDiv);
-      userDiv.innerHTML = `<p> Имя пользователя: ${name}, возраст: ${age}. </p>`;
-    }
-    inputName.value = '';
-    inputAge.value = '';
-  }
+  const button = document.getElementById('btn');
+  const inputName = document.getElementById('inputName');
+  const inputAge = document.getElementById('inputAge');
+  const warning = document.createElement('div');
+  userList.before(warning);
   
-
-
+    button.onclick = () => {
+      if (inputName.value == '' || inputAge.value == '') {
+        warning.innerHTML = `<p id = "warning" style="color: red"> Введите имя и возраст пользователя! </p>`; 
+      } else {
+        warning.innerHTML = '';
+        const name = inputName.value;
+        const age = +inputAge.value;
+        users.push({name: name, age: age});
+        const userDiv = document.createElement('div');
+        const userLi = document.createElement('li');
+        userList.prepend(userLi);
+        userLi.prepend(userDiv);
+        userDiv.innerHTML = `<p> Имя пользователя: ${name}, возраст: ${age}. </p>`;
+      }
+      inputName.value = '';
+      inputAge.value = '';
+    }  
